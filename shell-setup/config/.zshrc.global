@@ -1,0 +1,61 @@
+#Print ls command on every cd command
+chpwd() {
+  ls -F --color=tty
+}
+
+# Edit this file
+alias edalias="code ~/.zshrc"
+alias bashrf="source ~/.zshrc"
+
+# Display folders
+alias ls='ls -GFh --color=tty'
+alias l='ls -GFha'
+alias ll='ls -GFhltr'
+alias la='ls -GFhla'
+alias 'o'='ls -GFhlatri'
+
+# move around in dirs
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# manipulate dirs
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -i'
+alias mk="mkdir"
+alias th="touch"
+
+# Grep
+alias og='ls -latri | grep -i $1'
+alias psg="ps -ef | grep -i "
+alias hg='history | grep'
+alias dg='grep -rl $1'
+alias ng='grep --exclude-dir=node_modules -rl $1'
+
+#GIT
+alias gstat='git status'
+alias gcom='git commit -m'
+alias gad='git add -A'
+alias glone='git log --oneline'
+alias gloner='git log --oneline --reverse'
+alias gpush='git push'
+alias gpull='git pull'
+alias gdifs='git diff --staged'
+alias gdif='git diff'
+
+# Miscellaneous
+alias h='history | tail'
+
+alias pings='ping -c 5 $1'
+alias pingg='pings 8.8.8.8'
+
+alias bosstext='toilet -f mono12 -F metal $1'
+
+alias duu="du -hd 1 ./"
+
+# Find process using port
+function fport() {
+    #netstat -ltnp | grep -w :$1
+    lsof -i :$1
+}
